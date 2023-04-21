@@ -25,16 +25,17 @@ export class IconsComponent implements OnInit {
 
   ngOnInit(): void {
     this.iconsData.getAll().subscribe(icons => {
-      console.log(icons)
       this.iconsList = icons;
 
       for (let [iconName] of Object.entries(icons)) {
         this.parsedIconsNames.push(`${iconName}`);
       }
     })
+    this.generateRandomIcon();
   }
 
   generateRandomIcon() {
+    console.log('click');
     setTimeout(() => {
       const randomIcon =  this.parsedIconsNames[Math.floor(Math.random() * this.parsedIconsNames.length)];
       const parseIconFromLibrary = parse.icon(randomIcon);
