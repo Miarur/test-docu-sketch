@@ -1,0 +1,51 @@
+<style>
+  .iconView {
+    margin-top: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+  }
+
+
+  .random_btn {
+    margin-top: 50px;
+    width: 200px;
+    height: 60px;
+    background-color: #1976d2;
+    border: 1px solid white;
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all .1s ease-in-out;
+  }
+
+  .random_btn:hover {
+    transform: scale(1.1);
+  }
+
+  .random_btn:active {
+    transform: scale(1);
+    background-color: #27e40a;
+  }
+
+  .loading {
+    font-size: 50px;
+    text-align: center;
+  }
+</style>
+
+<div class="random__block">
+  <p *ngIf='loading' class="loading">Loading...</p>
+
+  <div class="iconView" id="iconView">
+  </div>
+  <button
+    class="random_btn"
+    (click)="generateRandomIcon()"
+  >
+    {{ buttonText }}
+  </button>
+</div>
