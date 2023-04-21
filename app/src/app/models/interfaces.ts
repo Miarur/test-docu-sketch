@@ -10,10 +10,7 @@ export interface IconItem {
   voted: boolean
 }
 
-export interface IconList {
- iconsList: IconItem[],
-}
-
+export type IconList = IconItem[];
 
 export type NonNumber<T> = T extends number ? never : T;
 

@@ -31,18 +31,20 @@
     background-color: #27e40a;
   }
 
-  .icon {
-    width: 2em;
-    height: 2em;
-    vertical-align: -0.125em;
+  .loading {
+    font-size: 50px;
+    text-align: center;
   }
 </style>
 
 <div class="random__block">
-  <div class="iconView" id="iconView"></div>
+  <p *ngIf='loading' class="loading">Loading...</p>
+
+  <div class="iconView" id="iconView">
+  </div>
   <button
     class="random_btn"
-    (click)="getIcon()"
+    (click)="generateRandomIcon()"
   >
     {{ buttonText }}
   </button>
